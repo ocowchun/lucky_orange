@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:github]
   enum role: [ :student, :teacher ]
 
+  has_many :have_homeworks
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -21,6 +23,10 @@ class User < ActiveRecord::Base
 
   def student?
     role=="student"
+  end
+
+  def write_homework?(homework)
+    have_homeworks.where(homework_id:homework.id).any?
   end
 
 end

@@ -1,0 +1,15 @@
+<%= form_for [homework,have_homework] do |f| %>
+<div class="form-group">
+	<label for="inputEmail3" class="col-sm-2 control-label">作業repo url</label>
+	<div class="col-sm-10">
+		<%= f.text_field :repo_url,:class=>"form-control",:placeholder=>"作業repo url"%>  
+	</div>
+</div>
+
+
+<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+		<%=f.submit :save,:class=>"btn btn-default"%>  	
+	</div>
+</div>  
+<% end %>
