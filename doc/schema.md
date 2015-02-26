@@ -3,6 +3,7 @@ name:string 作業名稱
 introduction:text 作業說明
 
 ##user
+role :分成助教與學生
 
 ##have_homeworks
 
