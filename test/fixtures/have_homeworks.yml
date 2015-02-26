@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  homework_id: 1
+  repo_url: MyString
+  submit_date: 2015-02-26
+
+two:
+  user_id: 1
+  homework_id: 1
+  repo_url: MyString
+  submit_date: 2015-02-26
