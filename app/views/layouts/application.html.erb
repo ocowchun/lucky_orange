@@ -7,20 +7,9 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
+<%=render :partial =>"common/nav" %>
 
-	<div>
-		<% if user_signed_in? %>
-		hello <%=current_user.name%>  
-		<%= link_to "log out", destroy_user_session_path,method:'delete' %>
-		<% if can? :new,Homework %>
-		<%= link_to "new homework", new_homework_path %>
-		<% end %>
-		<% else %>
-		<%= link_to "login", new_user_session_path %>
-		<% end %>
 
-		<%= link_to "homeworks", homeworks_path %>
-	</div>
 
 	<%= yield %>
 
