@@ -12,7 +12,7 @@
     <tr>
       <td><%= link_to homework.name, homework_path(homework) %>  </td>
       <td><%= date_format(homework.deadline)%>   </td>
-      <td></td>
+      <td><%= homework.complete_work_count%>  </td>
       <% if can? :update,homework %>
       <td>
         <%= link_to "edit", edit_homework_path(homework) %>
