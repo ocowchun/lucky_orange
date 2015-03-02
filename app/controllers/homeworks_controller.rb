@@ -34,7 +34,7 @@ class HomeworksController < ApplicationController
   private
 
   def homework_params
-    params.require(:homework).permit(:name,:introduction)
+    params.require(:homework).permit(:name,:introduction,:deadline)
   end
 
   def find_homework

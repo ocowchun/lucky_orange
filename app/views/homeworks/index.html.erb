@@ -11,7 +11,7 @@
     <%@homeworks.each do|homework|%>  
     <tr>
       <td><%= link_to homework.name, homework_path(homework) %>  </td>
-      <td></td>
+      <td><%= date_format(homework.deadline)%>   </td>
       <td></td>
       <% if can? :update,homework %>
       <td>
