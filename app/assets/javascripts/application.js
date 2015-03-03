@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-ui/datepicker
+//= require homework_form
 //= require_tree .

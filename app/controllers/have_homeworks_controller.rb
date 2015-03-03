@@ -15,7 +15,19 @@ class HaveHomeworksController < ApplicationController
     else
       render :new
     end
+  end
 
+  def edit
+    @have_homework=current_user.have_homeworks.where(homework_id:@homework.id).first
+  end
+
+  def update
+    @have_homework=current_user.have_homeworks.where(homework_id:@homework.id).first
+    if @have_homework.update(have_homework_params)
+      redirect_to homework_path(@homework)
+    else
+      render :new
+    end
   end
 
   private
@@ -26,7 +38,7 @@ class HaveHomeworksController < ApplicationController
 
   def check_exist_homework
     if current_user.write_homework?(@homework)
-      @have_homework=current_user.have_homeworks.where(homework_id:homework.id).first
+      @have_homework=current_user.have_homeworks.where(homework_id:@homework.id).first
       redirect_to edit_homework_have_homework_path(@homework,@have_homework)
     end
 
