@@ -17,6 +17,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.get_student_avatars
+    result=[]
+    all.each do|user|
+      result<<{name:user.name,id:user.id,avatar:"https://avatars.githubusercontent.com/u/#{user.uid}"}
+    end
+    result
+  end
+
   def teacher?
     role=="teacher"
   end

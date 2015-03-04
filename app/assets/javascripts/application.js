@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require lodash
 //= require jquery-ui/datepicker
 //= require homework_form
+//= require slot
 //= require_tree .
