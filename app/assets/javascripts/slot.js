@@ -23,7 +23,7 @@
 			// 	html += "<li>" + "<img src='http://www.avatarpro.biz/avatar?=" + n + "' alt='' />" + "</li>"
 			// });
 			html = _.chain(students).map(function(student) {
-				return "<li>" + "<img src='" + student.avatar + "' alt='" + student.name + "' />" + "</li>";
+				return "<li>" + "<img class='student-avatar' src='" + student.avatar + "' alt='" + student.name + "' />" + "</li>";
 			}).reduce(function(html, item) {
 				return html + item;
 			}, html).value();
