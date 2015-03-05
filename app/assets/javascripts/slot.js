@@ -32,23 +32,23 @@
 
 		var current = 0;
 		var intervalID;
-		var currentStudentName;
+		var currentStudent;
 
 		function slotGo() {
 			var count = students.length;
 			var liHeight = $list.find('li').first().height();
 			$list.css("margin-top", "0px");
-			var currentStudent = Math.floor(Math.random());
-			currentStudentName = students[currentStudent].name;
-
-			var limit = liHeight * Math.floor(count + currentStudent * count);
+			var currentStudentIdx = Math.floor(Math.random());
+			currentStudent = students[currentStudentIdx];
+			var limit = liHeight * Math.floor(count + currentStudentIdx * count);
 			var position = "-" + limit + "px";
 			$list.animate({
 				'margin-top': position
-			}, 3000, function() {
-				console.log('@@');
-
-				$userName.text(currentStudentName);
+			}, 1000, function() {
+				
+				console.log(currentStudent)				
+				var UserNamehtml = "<a href='/users/" + currentStudent.id + "' >" + currentStudent.name+"</a>";
+				$userName.html(UserNamehtml);
 			});
 		}
 

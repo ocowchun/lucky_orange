@@ -20,10 +20,15 @@ class User < ActiveRecord::Base
   def self.get_student_avatars
     result=[]
     all.each do|user|
-      result<<{name:user.name,id:user.id,avatar:"https://avatars.githubusercontent.com/u/#{user.uid}"}
+      result<<{name:user.name,id:user.id,avatar:user.avatar}
     end
     result
   end
+
+  def avatar
+    "https://avatars.githubusercontent.com/u/#{uid}"
+  end
+
 
   def teacher?
     role=="teacher"
