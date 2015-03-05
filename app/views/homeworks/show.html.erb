@@ -5,3 +5,23 @@
 
 
 <%= link_to "繳交作業", new_homework_have_homework_path(@homework) %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Repo url</th>
+			<th>最後更新日期</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		<%@have_homeworks.each do|work|%>  
+		<tr>
+			<td><%=work.user.name%>  </td>
+			<td><%= link_to work.repo_url, work.repo_url,target:"_blank" %>  </td>
+			<td><%= date_format work.updated_at%>  </td>
+		</tr>
+		<%end%>  
+	</tbody>
+</table>
