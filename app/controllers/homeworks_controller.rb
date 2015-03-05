@@ -5,6 +5,10 @@ class HomeworksController < ApplicationController
     @homeworks=Homework.all
   end
 
+  def show
+    @have_homeworks=@homework.have_homeworks.includes(:user)
+  end
+
   def new
     @homework=Homework.new
   end
