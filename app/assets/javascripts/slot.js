@@ -38,9 +38,9 @@
 			var count = students.length;
 			var liHeight = $list.find('li').first().height();
 			$list.css("margin-top", "0px");
-			var currentStudentIdx = Math.floor(Math.random());
+			var currentStudentIdx = Math.floor(Math.random() * count);
 			currentStudent = students[currentStudentIdx];
-			var limit = liHeight * Math.floor(count + currentStudentIdx * count);
+			var limit = liHeight * Math.floor(count + currentStudentIdx);
 			var position = "-" + limit + "px";
 			$list.animate({
 				'margin-top': position
