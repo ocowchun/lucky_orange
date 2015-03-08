@@ -23,6 +23,7 @@ gem 'omniauth-github'
 gem 'figaro'
 gem 'cancancan', '~> 1.10'
 gem 'pry-rails'
+gem "kaminari"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
