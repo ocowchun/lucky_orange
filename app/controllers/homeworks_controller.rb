@@ -6,7 +6,7 @@ class HomeworksController < ApplicationController
   end
 
   def show
-    @have_homeworks=@homework.have_homeworks.includes(:user)
+    @have_homeworks=@homework.have_homeworks.includes(:user).page(params[:page]).per(10).order("have_homeworks.updated_at desc")
   end
 
   def new
