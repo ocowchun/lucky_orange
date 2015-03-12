@@ -2,6 +2,7 @@ class HaveHomeworksController < ApplicationController
   before_action :authenticate_user!
   before_action :find_homework
   before_action :check_exist_homework,:only=>[:new]
+  authorize_resource
 
   def dashboard
     @have_homeworks=@homework.have_homeworks.page(params[:page]).per(10).order("have_homeworks.updated_at desc")

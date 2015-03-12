@@ -8,6 +8,9 @@ class Ability
         can :manage,:all
       elsif user.student?
         can :read,:all
+        can :create,HaveHomework
+        can :update,HaveHomework
+
       end
     else
     end
