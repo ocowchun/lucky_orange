@@ -11,7 +11,9 @@
 
 
 <%= link_to "繳交作業", new_homework_have_homework_path(@homework),class:"btn btn-default" %>
-
+<% if can? :edit,@homework %>
+	<%= link_to "編輯", edit_homework_path(@homework),class:"btn btn-success" %>
+<% end %>
 <table class="table table-striped">
 	<thead>
 		<tr>
