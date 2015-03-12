@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305145436) do
+ActiveRecord::Schema.define(version: 20150312092053) do
 
   create_table "have_homeworks", force: :cascade do |t|
     t.integer  "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150305145436) do
     t.date     "submit_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "score"
   end
 
   create_table "homeworks", force: :cascade do |t|
@@ -29,6 +30,14 @@ ActiveRecord::Schema.define(version: 20150305145436) do
     t.datetime "updated_at",           null: false
     t.date     "deadline"
     t.integer  "have_homeworks_count"
+    t.integer  "score"
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

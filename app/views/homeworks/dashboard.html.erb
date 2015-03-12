@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>作業名稱</th>
+      <th>截止日期</th>
+      <th>完成人數</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@homeworks.each do|homework|%>  
+    <tr>
+      <td><%= link_to homework.name, homework_path(homework) %>  </td>
+      <td><%= date_format(homework.deadline)%>   </td>
+      <td><%= homework.complete_work_count%>  </td>
+      <% if can? :update,homework %>
+      <td>
+        <%= link_to "edit", edit_homework_path(homework) %>
+      </td>
+      <td>
+        <%= link_to "批改作業", dashboard_homework_have_homeworks_path(homework) %>
+      </td>
+      <% end %>
+    </tr>
+    <%end%>  
+    
+  </tbody>
+</table>

@@ -2,6 +2,11 @@ class HaveHomeworksController < ApplicationController
   before_action :authenticate_user!
   before_action :find_homework
   before_action :check_exist_homework,:only=>[:new]
+  authorize_resource
+
+  def dashboard
+    @have_homeworks=@homework.have_homeworks.page(params[:page]).per(10).order("have_homeworks.updated_at desc")
+  end
 
   def new
     @have_homework=current_user.have_homeworks.new
@@ -28,6 +33,17 @@ class HaveHomeworksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def score
+    @have_homework=@homework.have_homeworks.find(params[:id])
+    @have_homework.score=params[:score]
+    if   @have_homework.save
+      flash[:info]="評分成功"
+    else
+      flash[:alert]=@have_homework.errors.full_messages
+    end
+    redirect_to dashboard_homework_have_homeworks_path(@homework)
   end
 
   private

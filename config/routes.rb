@@ -16,7 +16,13 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :homeworks do
-    resources :have_homeworks
+    get 'dashboard',on: :collection
+
+    resources :have_homeworks do
+      get 'dashboard',on: :collection
+      post 'score',on: :member
+
+    end
   end
 
   # Example resource route with options:
