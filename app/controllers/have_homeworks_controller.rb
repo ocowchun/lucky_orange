@@ -5,7 +5,7 @@ class HaveHomeworksController < ApplicationController
   authorize_resource
 
   def dashboard
-    @have_homeworks=@homework.have_homeworks.page(params[:page]).per(10).order("have_homeworks.updated_at desc")
+    @have_homeworks=@homework.have_homeworks.where("score is NULL").page(params[:page]).per(10).order("have_homeworks.updated_at desc")
   end
 
   def new
