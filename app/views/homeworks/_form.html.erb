@@ -12,7 +12,8 @@
 		<!-- <input type="password" class="form-control" id="inputPassword3" placeholder="Password"> -->
 		<!-- <textarea class="form-control" rows="3"></textarea> -->
 
-		<%= f.text_area :introduction,:class=>"form-control",:placeholder=>"作業說明"%>  
+		<%= f.text_area :introduction,:class=>"form-control",:placeholder=>"作業說明",
+		:"data-provide"=>"markdown"%>  
 
 	</div>
 </div>
