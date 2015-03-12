@@ -7,8 +7,15 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-<%=render :partial =>"common/nav" %>
+	<%=render :partial =>"common/nav" %>
+	<% if flash[:info].present? %>
+	<div class="alert alert-success" role="alert"><%=flash[:info]%>  </div>
+	<% end %>
 
+	<% if flash[:alert].present? %>
+<div class="alert alert-danger" role="alert"><%=flash[:alert]%></div>
+
+	<% end %>
 
 
 	<%= yield %>

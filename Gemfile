@@ -26,6 +26,8 @@ gem 'figaro'
 gem 'cancancan', '~> 1.10'
 gem 'pry-rails'
 gem "kaminari"
+gem 'rails-bootstrap-markdown'
+gem 'redcarpet'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -53,7 +55,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
 end
 gem 'puma'
 gem 'rails_12factor', group: :production
