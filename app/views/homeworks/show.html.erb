@@ -1,10 +1,16 @@
 <div>
 	<p>	作業名稱: <%=@homework.name%>  </p>
-	<div>作業說明:<%=@homework.introduction%>  	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">作業說明</div>
+		<div class="panel-body">
+		<%=render_homework_content @homework%>  
+		</div>
+	</div>
 </div>
 
 
-<%= link_to "繳交作業", new_homework_have_homework_path(@homework) %>
+<%= link_to "繳交作業", new_homework_have_homework_path(@homework),class:"btn btn-default" %>
 
 <table class="table table-striped">
 	<thead>
