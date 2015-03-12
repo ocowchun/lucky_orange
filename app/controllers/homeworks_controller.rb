@@ -1,7 +1,12 @@
 class HomeworksController < ApplicationController
   before_action :find_homework,:only=>[:show,:edit,:update]
+  authorize_resource
 
   def index
+    @homeworks=Homework.all
+  end
+
+  def dashboard
     @homeworks=Homework.all
   end
 

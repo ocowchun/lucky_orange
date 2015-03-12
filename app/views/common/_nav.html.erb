@@ -29,6 +29,7 @@
         <% if can? :new,Homework %>
         
         <li><%= link_to "new homework", new_homework_path %></li>
+        <li><%= link_to "改作業", dashboard_homeworks_path %></li>
         <% end %>
         <li><%= link_to current_user.name, edit_user_registration_path %></li>
 
