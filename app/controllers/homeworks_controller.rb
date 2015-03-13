@@ -1,4 +1,5 @@
 class HomeworksController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_homework,:only=>[:show,:edit,:update]
   authorize_resource
 
