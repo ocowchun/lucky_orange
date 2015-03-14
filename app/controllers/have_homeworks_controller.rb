@@ -15,6 +15,7 @@ class HaveHomeworksController < ApplicationController
   def create
     @have_homework=current_user.have_homeworks.new(have_homework_params)
     @have_homework.homework_id=@homework.id
+    @have_homework.last_submit_at=DateTime.now
     if @have_homework.save
       redirect_to homework_path(@homework)
     else
@@ -28,6 +29,7 @@ class HaveHomeworksController < ApplicationController
 
   def update
     @have_homework=current_user.have_homeworks.where(homework_id:@homework.id).first
+    @have_homework.last_submit_at=DateTime.now
     if @have_homework.update(have_homework_params)
       redirect_to homework_path(@homework)
     else

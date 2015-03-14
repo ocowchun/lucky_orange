@@ -9,6 +9,7 @@
 	<thead>
 		<tr>
 			<th>作業名稱</th>
+			<th>最後更新時間</th>
 			<th>評分</th>
 		</tr>
 	</thead>
@@ -16,6 +17,7 @@
 	<%@have_homeworks.each do|work|%>  
 		<tr>
 			<td><%= link_to work.homework.name, homework_path(work.homework) %>  	</td>
+			<td><%= last_update(work)%>  </td>
 			<td><%=score_label(work)%>  </td>
 		</tr>
 
