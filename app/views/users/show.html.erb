@@ -1,3 +1,24 @@
 <h2><%=@user.real_name%>  </h2>
 <h3><%=@user.student_no%>  </h3>
-<%=image_tag @user.avatar%>  
+<%=image_tag @user.avatar,:height=>200%>  
+
+<h2>完成作業</h2>
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>作業名稱</th>
+			<th>評分</th>
+		</tr>
+	</thead>
+	<tbody>
+	<%@have_homeworks.each do|work|%>  
+		<tr>
+			<td><%= link_to work.homework.name, homework_path(work.homework) %>  	</td>
+			<td><%=score_label(work)%>  </td>
+		</tr>
+
+		<%end%>  
+	</tbody>
+</table>

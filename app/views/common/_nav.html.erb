@@ -31,7 +31,8 @@
         <li><%= link_to "new homework", new_homework_path %></li>
         <li><%= link_to "改作業", dashboard_homeworks_path %></li>
         <% end %>
-        <li><%= link_to current_user.name, edit_user_registration_path %></li>
+        <li> <%= link_to current_user.name, user_path(current_user) %></li>
+        <li><%= link_to '編輯個人資訊', edit_user_registration_path %></li>
 
         <li> <%= link_to "log out", destroy_user_session_path,method:'delete' %></li>
 
