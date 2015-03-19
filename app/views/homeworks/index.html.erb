@@ -4,6 +4,7 @@
       <th>作業名稱</th>
       <th>截止日期</th>
       <th>完成人數</th>
+      <th>成績排行</th>
       <th></th>
     </tr>
   </thead>
@@ -13,6 +14,7 @@
       <td><%= link_to homework.name, homework_path(homework) %>  </td>
       <td><%= date_format(homework.deadline)%>   </td>
       <td><%= homework.complete_work_count%>  </td>
+      <td><%= link_to "成績排行", chart_homework_path(homework) %></td>
       <% if can? :update,homework %>
       <td>
         <%= link_to "edit", edit_homework_path(homework) %>
