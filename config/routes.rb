@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :homeworks do
     get 'dashboard',on: :collection
+    get 'chart',on: :member
 
     resources :have_homeworks do
       get 'dashboard',on: :collection

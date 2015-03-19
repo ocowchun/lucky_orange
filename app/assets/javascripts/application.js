@@ -17,5 +17,6 @@
 //= require jquery-ui/datepicker
 //= require homework_form
 //= require bootstrap-markdown-bundle
+//= require chartjs
 //= require slot
 //= require_tree .

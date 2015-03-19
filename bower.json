@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "chartjs": "~1.0.1",
+    "chartjs": "~1.0.2",
     "lodash": "~3.3.1"
   }
 }

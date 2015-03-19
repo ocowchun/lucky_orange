@@ -1,0 +1,22 @@
+<h2>成績排行</h2>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script type="text/javascript">
+	var data = {
+    labels: ["A+", "A", "A-", "others"],
+    datasets: [
+ 
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: <%=@result.to_json%>  
+        }
+    ]
+};
+	var ctx = document.getElementById("myChart").getContext("2d");
+	var myBarChart = new Chart(ctx).Bar(data);
+
+</script>
