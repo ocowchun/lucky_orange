@@ -10,6 +10,7 @@ class Ability
         can :read,:all
         can :create,HaveHomework
         can :update,HaveHomework
+        can :chart,Homework
       end
     else
     end

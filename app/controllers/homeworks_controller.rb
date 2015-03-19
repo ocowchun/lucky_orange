@@ -1,6 +1,6 @@
 class HomeworksController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_homework,:only=>[:show,:edit,:update]
+  before_action :find_homework,:only=>[:show,:edit,:update,:chart]
   authorize_resource
 
   def index
@@ -37,6 +37,14 @@ class HomeworksController < ApplicationController
       redirect_to homeworks_path
     else
       render :edit
+    end
+  end
+
+  def chart
+    scores=@homework.have_homeworks.select('score,count(id) as amount').group('score')
+    @result=[0,0,0,0]
+    scores.each do|score|
+      @result[score["score"]-4]=score["amount"]
     end
   end
 
