@@ -44,7 +44,7 @@ class HomeworksController < ApplicationController
     scores=@homework.have_homeworks.select('score,count(id) as amount').group('score')
     @result=[0,0,0,0]
     scores.each do|score|
-      @result[score["score"]-4]=score["amount"]
+      @result[score["score"]-4]=score["amount"] if score["score"].present?
     end
   end
 
