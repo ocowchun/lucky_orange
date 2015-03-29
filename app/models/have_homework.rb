@@ -10,9 +10,11 @@ class HaveHomework < ActiveRecord::Base
       'A'
     elsif score==2
       'A-'
-    else
+    elsif score==1
       '遲交或未達基本標準'
+    else
+      '尚未評分'
     end
   end
-  
+
 end
