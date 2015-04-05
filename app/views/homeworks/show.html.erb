@@ -4,7 +4,7 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">作業說明</div>
 		<div class="panel-body">
-		<%=render_homework_content @homework%>  
+		<%=render_homework_content @homework%>
 		</div>
 	</div>
 </div>
@@ -24,13 +24,13 @@
 	</thead>
 	<tbody>
 
-		<%@have_homeworks.each do|work|%>  
+		<%@have_homeworks.each do|work|%>
 		<tr>
-			<td><%=work.user.name%>  </td>
+			<td><%= link_to work.user.name, user_path(work.user) %>  </td>
 			<td><%= link_to work.repo_url, work.repo_url,target:"_blank" %>  </td>
 			<td><%= last_update(work)%>  </td>
 		</tr>
-		<%end%>  
+		<%end%>
 	</tbody>
 </table>
 
