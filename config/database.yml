@@ -23,3 +23,14 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+# development:
+#   adapter: postgresql
+#   timeout: 5000
+#   encoding: utf8
+#   database:
+#   pool: 5
+#   username:
+#   password:
+#   host:
+#   port: 5432
