@@ -4,7 +4,7 @@ class HomeworksController < ApplicationController
   authorize_resource
 
   def index
-    @homeworks=Homework.all
+    @homeworks=Homework.all.order("id desc")
   end
 
   def dashboard
